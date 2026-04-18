@@ -7,6 +7,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
+import ChatBot from './components/Chatbot'
 
 export default function App() {
   const cursorRef = useRef(null)
@@ -67,6 +68,7 @@ export default function App() {
       <Projects />
       <Achievements />
       <Contact />
+      <ChatBot />
     </>
   )
 }

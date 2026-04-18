@@ -96,7 +96,7 @@ export default function About() {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   marginBottom: 8,
-                }}>Shashank Goyal</div>
+                }}>SG</div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', letterSpacing: 3 }}>
                   AI DEVELOPER
                 </div>
