@@ -10,17 +10,24 @@ const achievements = [
     color: '#ffd700',
   },
   {
+    icon: '💻',
+    title: 'Code2Duo',
+    subtitle: '3rd Place – Programming Competition',
+    description: 'Secured 3rd place in the college Code2Duo programming competition, showcasing algorithmic problem-solving skills.',
+    color: 'var(--accent)',
+  },
+  {
     icon: '🌱',
-    title: 'NGO Volunteer',
-    subtitle: 'Best Volunteer of the Year 2023',
-    description: 'Recognized as Best Volunteer of the Year 2023 at Mercy For Animals India for outstanding contributions.',
+    title: 'Best Volunteer 2023',
+    subtitle: 'Mercy For Animals India (MFA)',
+    description: 'Recognized as Best Volunteer of the Year 2023 at MFA NGO for outstanding contributions and commitment.',
     color: '#4caf50',
   },
   {
     icon: '☁️',
     title: 'Salesforce Certified',
     subtitle: 'Developer Certification by SmartInternz',
-    description: 'Earned Salesforce Developer Certification — gained strong knowledge of Salesforce Flow, automation, and process tools.',
+    description: 'Earned Salesforce Developer Certification — strong knowledge of Salesforce Flow, automation, and process tools.',
     color: '#00a1e0',
   },
 ]
@@ -32,79 +39,20 @@ export default function Achievements() {
   return (
     <section id="achievements" ref={ref}>
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: 60, textAlign: 'center' }}
-        >
+        <motion.div initial={{opacity:0,y:30}} animate={isInView?{opacity:1,y:0}:{}} transition={{duration:.6}} style={{ marginBottom:60,textAlign:'center' }}>
           <p className="section-subtitle">// milestones</p>
           <h2 className="section-title">Achievements</h2>
         </motion.div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
-          {achievements.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="glow-card"
-              style={{ textAlign: 'center', padding: '40px 28px', position: 'relative', overflow: 'hidden' }}
-            >
-              {/* Background glow */}
-              <div style={{
-                position: 'absolute',
-                top: -30,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: 120,
-                height: 120,
-                borderRadius: '50%',
-                background: `radial-gradient(circle, ${item.color}15, transparent)`,
-              }} />
-
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                style={{ fontSize: '3rem', marginBottom: 20 }}
-              >
-                {item.icon}
-              </motion.div>
-
-              <h3 style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '1rem',
-                fontWeight: 700,
-                color: item.color,
-                marginBottom: 6,
-                letterSpacing: 1,
-              }}>{item.title}</h3>
-
-              <div style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.72rem',
-                color: 'var(--text-muted)',
-                letterSpacing: 1,
-                marginBottom: 16,
-                textTransform: 'uppercase',
-              }}>{item.subtitle}</div>
-
-              <p style={{
-                color: 'var(--text-muted)',
-                fontSize: '0.88rem',
-                lineHeight: 1.7,
-              }}>{item.description}</p>
-
-              {/* Bottom accent */}
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: 2,
-                background: `linear-gradient(to right, transparent, ${item.color}, transparent)`,
-              }} />
+        <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:28 }}>
+          {achievements.map((item,i)=>(
+            <motion.div key={item.title} initial={{opacity:0,y:50,scale:.95}} animate={isInView?{opacity:1,y:0,scale:1}:{}} transition={{duration:.6,delay:i*.15}}
+              className="glow-card" style={{ textAlign:'center',padding:'40px 28px',position:'relative',overflow:'hidden' }}>
+              <div style={{ position:'absolute',top:-30,left:'50%',transform:'translateX(-50%)',width:120,height:120,borderRadius:'50%',background:`radial-gradient(circle,${item.color}15,transparent)` }}/>
+              <motion.div animate={{y:[0,-6,0]}} transition={{duration:3,repeat:Infinity,delay:i*.5}} style={{ fontSize:'3rem',marginBottom:20 }}>{item.icon}</motion.div>
+              <h3 style={{ fontFamily:'var(--font-display)',fontSize:'1rem',fontWeight:700,color:item.color,marginBottom:6,letterSpacing:1 }}>{item.title}</h3>
+              <div style={{ fontFamily:'var(--font-mono)',fontSize:'.72rem',color:'var(--text-muted)',letterSpacing:1,marginBottom:16,textTransform:'uppercase' }}>{item.subtitle}</div>
+              <p style={{ color:'var(--text-muted)',fontSize:'.88rem',lineHeight:1.7 }}>{item.description}</p>
+              <div style={{ position:'absolute',bottom:0,left:0,right:0,height:2,background:`linear-gradient(to right,transparent,${item.color},transparent)` }}/>
             </motion.div>
           ))}
         </div>
